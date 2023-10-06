@@ -1,0 +1,14 @@
+.tech-stack{
+    display: flex;
+     margin-top: 30px;
+     margin-left: 50px;
+}
+.tech-stack img{
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+}
+h2{
+    margin-top: 50px;
+    margin-left: 50px;
+}
