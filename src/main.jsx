@@ -1,44 +1,63 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import About from './pages/About.jsx'
-import Skill from './pages/Skill.jsx'
-import Project from './pages/Project.jsx'
+
+import React from 'react'
+import MainApp from './MainApp'
+import { BrowserRouter } from 'react-router-dom'
+
+// import { useNavigate } from 'react-router-dom';
+// const navigate = useNavigate()
 
 
- const router =createBrowserRouter([
-  {
-    path: "/",
-    element:<App/>,
-    children: [
-      {
-        path: "/home",
-        element: <Home/>,
-      },
-      {
-        path: "/about",
-        element: <About/>,
-      },
-      {
-        path: "/skill",
-        element: <Skill/>,
-      },
-      {
-        path: "/project",
-        element: <Project/>,
-      },
-    ]
-  },
+
+
+//  const router =createBrowserRouter([
+ 
+//   {
+//     path: "/",
+//     element:<App/>,
+//     children: [
+//       {
+//         path: "/home",
+//         element: <Home/>,
+//       },
+//       {
+//         path: "/about",
+//         element: <About/>,
+//       },
+//       {
+//         path: "/skill",
+//         element: <Skill/>,
+//         children:[{path:""}]
+//       },
+//       {
+//         path: "/project",
+//         element: <Project/>,
+//       },
+//       {
+//         path: "/login",
+//         element: <LoginPage/>,
+//       },
+//       {
+//         path: "/singUp",
+//         element: <SingUp/>,
+//       },
+//     ]
+//   },
   
-])
+// ])
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
+    <BrowserRouter>
+    <MainApp/>
+    </BrowserRouter>
     
+      
       {/* <App /> */}
-      <RouterProvider router={router}/>
+      {/* <RouterProvider router={router}/> */}
     
   </React.StrictMode>
 )
