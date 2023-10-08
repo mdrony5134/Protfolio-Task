@@ -23,13 +23,11 @@ const navigate =  useNavigate()
                       <Route path='/project' element={<Project/>}/>
                     </>
               ) : (
-                <><Route path='/*' element={() => {
+                <Route path='/*' element={() => {
                           navigate('/login');
                           return null;
-                      } } /><Route path='/about' element={() => {
-                          navigate('/login');
-                          return null;
-                      } } /></>
+                      } }  
+                />
               )}
               
               <Route path='/login' element={<LoginPage/>}/>

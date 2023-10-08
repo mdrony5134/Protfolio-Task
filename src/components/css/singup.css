@@ -1,0 +1,55 @@
+
+/* Form container */
+.containers {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h3{
+    /* padding: 20px 0px; */
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Form input fields */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Form buttons */
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: #4caf50;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

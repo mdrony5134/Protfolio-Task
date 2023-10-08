@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import '../components/css/login.css'
 
 const LoginPage = () => {
   const [email, setEmail] = useState()
@@ -16,7 +17,8 @@ const LoginPage = () => {
   }
   return (
     <div>
-      <h2>Login</h2>
+      <div className="containers">
+      <h3>Login</h3>
       <input 
       type="email" 
       placeholder="Enter Your Email" 
@@ -32,6 +34,7 @@ const LoginPage = () => {
       />
       <button onClick={handelLogin}>Login</button>
       <p>Don't have an account? <a href="/SingUp">Click here</a> </p>
+      </div>
     </div>
   )
 }
