@@ -3,17 +3,31 @@ import { useNavigate } from "react-router-dom"
 import '../components/css/login.css'
 
 const LoginPage = () => {
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  const [data , setData] = useState({email:'', password: ''})
+
+  // const [email, setEmail] = useState()
+  // const [password, setPassword] = useState()
   const navigate = useNavigate()
   const handelLogin = () =>{
-    const storedUser = JSON.parse(localStorage.getItem('user'))
-    if(storedUser && storedUser.email === email && storedUser.password === password){
-      localStorage.setItem("LoggedIn", "true")
-      navigate("/skill")
+    // const storedUser = JSON.parse(localStorage.getItem('user'))
+    let userList = localStorage.getItem('userList')
+    userList= userList?JSON.parse(userList):[]
+    let checkUser = userList.some(({email, password})=> (email === data.email && password === data.password))
+    if(checkUser){
+      localStorage.setItem("user", JSON.stringify(data))
+      navigate("/home")
     }else{
-      alert("email or password invalid")
+      alert("User not registered!")
+      navigate("/singUp")
     }
+
+    // if(storedUser && storedUser.email === email && storedUser.password === password){
+    //   localStorage.setItem("LoggedIn", "true")
+    //   navigate("/skill")
+    // }else{
+    //   alert("email or password invalid")
+    // }
+    
   }
   return (
     <div>
@@ -22,15 +36,15 @@ const LoginPage = () => {
       <input 
       type="email" 
       placeholder="Enter Your Email" 
-      value={email}
-      onChange={(e)=>setEmail(e.target.value)}
+      // value={email}
+      onChange={(e)=>setData(pre=>{return{...pre,email:e.target.value}})}
       />
 
       <input 
       type="password" 
       placeholder="Enter Your Password" 
-      value={password}
-      onChange={(e)=>setPassword(e.target.value)}
+      // value={password}
+      onChange={(e)=>setData(pre=>{return{...pre,email:e.target.value}})}
       />
       <button onClick={handelLogin}>Login</button>
       <p>Don't have an account? <a href="/SingUp">Click here</a> </p>
